@@ -20,10 +20,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = login(user.email, user.password);
-      if(res){
-        navigate('/home')
-      }
+      await login(user.email,user.password)
     } catch (err) {
       console.log(err)
     }

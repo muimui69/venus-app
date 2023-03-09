@@ -24,6 +24,7 @@ export const GlobalProvider = ({children}) =>{
 
     const [user,setUser] = useState(null);
 
+    const login = async(email,password) => signInWithEmailAndPassword(auth,email,password);
     const logout = ()=> signOut(auth);
 
     useEffect( ()=> {
@@ -36,6 +37,7 @@ export const GlobalProvider = ({children}) =>{
         <globalContext.Provider
             value ={{
                 user,
+                login,
                 logout
             }}
         >
