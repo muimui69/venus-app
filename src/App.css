@@ -1,0 +1,255 @@
+body{
+    margin:0;
+    padding: 0;
+    height: 100%;
+}
+
+.background-inicio{
+    --background: url(./img/fondo1.png);  
+    background-size: cover;
+    width: auto;
+    min-height: 80vw; 
+}
+
+
+.login-box{
+    width: 320px;
+    height: 420px;
+    background-image: linear-gradient(to right, turquoise, fuchsia);
+    
+    color:#000;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.login-box .avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50%-50px);
+}
+.login-box h1{
+    margin:0;
+    padding: 0 0 30px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login-box label{
+    margin:0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"]{
+    border: none;
+    border-bottom: 2px solid #000;
+    background: #fff;
+    outline: none;
+    height: 30px;
+    color: #000;
+    font-size: 16px;
+}
+
+.login-box input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #2FD173;
+    color:#fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.login-box a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000;
+}
+
+.login-box a:hover{
+    color: #000;
+}
+
+
+
+.Alinear_Flex{
+    width: 320px;
+    height: 420px;
+    color:#000;
+    top:50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display:flex;
+    justify-content: center;
+}
+
+
+
+.background-card{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right,turquoise,fuchsia);
+}
+
+.text {
+    
+    color: #000;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: 1px 2px #ffffff;
+    position: absolute;
+    transform: translate(-1%, -340%);
+}
+
+.container{
+    border:solid 1px rgba(175, 145, 145, 0.2);
+}
+
+table{
+    
+    color:#fff;
+    font-size:14px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+thead{
+    background:rgba(78, 61, 73, 0.637);
+}
+
+th{
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td{
+    padding: 15px;
+    font-weight: 700;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+
+}
+tbody tr{
+    cursor:pointer;
+    
+}
+tbody tr:hover{
+    background: rgba(179, 152, 170, 0.4);
+}
+#main-container{
+    padding-top: 0px;
+    text-align: center;
+}  
+.btn{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 5px ;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba (255,255,255,0.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,0,.3);
+}
+.btn-green{
+    color: #fff;
+    background-color:#3cc93f ;
+    top:50%;
+    left:58%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display:flex;
+    justify-content: center;  
+}
+#main-container2{
+    padding-top: 0px;
+    text-align: center;
+}  
+.btn2{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 5px ;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba (255,255,255,0.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,0,.3);
+
+}
+.btn-green2{
+    color: #fff;
+    background-color:#3cc93f ;
+    top:58%;
+    left:58%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display:flex;
+    justify-content: center;  
+}
+#main-container3{
+    padding-top: 0px;
+    text-align: center;
+
+}  
+.btn3{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 5px ;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba (255,255,255,0.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+
+}
+.btn-orange3{
+    color: #fff;
+    background-color:#ee8b19 ;
+    top:50%;
+    left:63%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display:flex;
+    justify-content: center;  
+}
+
+#main-container4{
+    padding-top: 0px;
+    text-align: center;
+
+}  
+.btn4{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 5px ;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba (255,255,255,0.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+
+}
+.btn-orange4{
+    color: #fff;
+    background-color:#ee8b19 ;
+    top:58%;
+    left:63%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display:flex;
+    justify-content: center;  
+}
