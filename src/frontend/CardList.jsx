@@ -8,7 +8,9 @@ const renderList = (tipo, solicitud,count) => {
                 <>
                     {
                         (count === 0)?
-                           <h1 className="text">Aun no tiene solicitudes pendientes</h1>
+                            <section>
+                                <h1 className="text">Aun no tiene solicitudes pendientes</h1>
+                            </section>
                         :
                         <section >
                             <h1 className="text">Lista De Cartas Pendientes</h1>
@@ -55,7 +57,9 @@ const renderList = (tipo, solicitud,count) => {
                 <>
                     {
                         (count === 0)?
-                            <h1 className="text" >Aun no tiene solicitudes aceptadas</h1>
+                            <section>
+                                <h1 className="text" >Aun no tiene solicitudes aceptadas</h1>
+                            </section>
                         :
                         <section >
                             <h1 className="text">Lista De Cartas Aceptadas</h1>
@@ -102,7 +106,9 @@ const renderList = (tipo, solicitud,count) => {
                 <>
                     {
                         (count === 0)?
-                            <h1 className="text" >Aun no tiene solicitudes rechazadas</h1>
+                            <section>
+                                <h1 className="text" >Aun no tiene solicitudes rechazadas</h1>
+                            </section>
                         :
                         <section >
                             <h1 className="text">Lista De Cartas Rechazadas</h1>

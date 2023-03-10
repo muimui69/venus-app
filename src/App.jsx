@@ -14,6 +14,7 @@ import {VerifyEmail} from './frontend/VerifyEmail';
 import {CardList} from './frontend/CardList';
 import { Heading } from './frontend/Heading';
 import { Pdf } from './frontend/Pdf';
+import { LetterRequest } from './frontend/LetterRequest';
 
 export const App =()=>{
     return (
@@ -78,7 +79,7 @@ export const App =()=>{
                         path = '/home/pdf-redact'
                         element={
                             <ProtectedRoute>
-                              <Pdf/>
+                                <LetterRequest/>
                             </ProtectedRoute>
                         }
                     />

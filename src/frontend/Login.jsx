@@ -46,7 +46,7 @@ export const Login = () => {
               <input name='code' type="text"  onChange={handleChange} placeholder="example123"/>
             
               <div className="div-aux">
-                <label for="Contraseña">Contraseña</label>
+                <label htmlFor="Contraseña">Contraseña</label>
               </div>
               
               <input name='password' onChange={handleChange} type="password" placeholder="********"/>
