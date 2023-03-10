@@ -98,6 +98,11 @@ export const GlobalProvider = ({children}) =>{
         });
     };
 
+    const userAddRedactLetter = async(values) =>{
+        const uid = auth.currentUser.uid;
+        await addDoc( collection( db ,'solicitud') , ({...values,uid}) );
+    }
+
     const caseCount =(estado)=>{
        switch (estado) {
         case 'pendiente':
@@ -120,9 +125,9 @@ export const GlobalProvider = ({children}) =>{
             setUser(currentUser);
             setIsloading(false);
             getUser();
-            getCantSolicitud();
             if(auth.currentUser!==null){
                 getSolicitud();
+                getCantSolicitud();
             }
         });
     },[auth]);
@@ -135,7 +140,8 @@ export const GlobalProvider = ({children}) =>{
                 logout,
                 loading,
                 solicitud,
-                caseCount
+                caseCount,
+                userAddRedactLetter
             }}
         >
             {children}

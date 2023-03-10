@@ -8,7 +8,9 @@ const renderList = (tipo, solicitud,count) => {
                 <>
                     {
                         (count === 0)?
-                           <h1 className="text">Aun no tiene solicitudes pendientes</h1>
+                            <section>
+                                <h1 className="text">Aun no tiene solicitudes pendientes</h1>
+                            </section>
                         :
                         <section >
                             <h1 className="text">Lista De Cartas Pendientes</h1>
@@ -24,11 +26,11 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, referencia, fecha }) => (
+                                         solicitud.map(({id, codigo, tipo, fecha }) => (
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
-                                                    <td>{referencia}</td>
+                                                    <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
                                                         <a href="#" className="btn btn-green">VER</a>
@@ -55,7 +57,9 @@ const renderList = (tipo, solicitud,count) => {
                 <>
                     {
                         (count === 0)?
-                            <h1 className="text" >Aun no tiene solicitudes aceptadas</h1>
+                            <section>
+                                <h1 className="text" >Aun no tiene solicitudes aceptadas</h1>
+                            </section>
                         :
                         <section >
                             <h1 className="text">Lista De Cartas Aceptadas</h1>
@@ -71,11 +75,11 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, referencia, fecha }) => (
+                                         solicitud.map(({id, codigo, tipo, fecha }) => (
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
-                                                    <td>{referencia}</td>
+                                                    <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
                                                         <a href="#" className="btn btn-green">VER</a>
@@ -102,7 +106,9 @@ const renderList = (tipo, solicitud,count) => {
                 <>
                     {
                         (count === 0)?
-                            <h1 className="text" >Aun no tiene solicitudes rechazadas</h1>
+                            <section>
+                                <h1 className="text" >Aun no tiene solicitudes rechazadas</h1>
+                            </section>
                         :
                         <section >
                             <h1 className="text">Lista De Cartas Rechazadas</h1>
@@ -118,11 +124,11 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, referencia, fecha }) => (
+                                         solicitud.map(({id, codigo, tipo, fecha }) => (
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
-                                                    <td>{referencia}</td>
+                                                    <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
                                                         <a href="#" className="btn btn-green">VER</a>
