@@ -5,7 +5,7 @@ import { useGlobal } from '../backend/context/GlobalContext';
 export const Login = () => {
 
   const [user, setUser] = useState({
-    email: '',
+    code: '',
     password: ''
   });
 
@@ -20,7 +20,8 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(user.email,user.password)
+      await login(user.code,user.password)
+      navigate('/home')
     } catch (err) {
       console.log(err)
     }
@@ -38,7 +39,7 @@ export const Login = () => {
             <form onSubmit={handleSubmit}>
 
               <label>Usuario</label>
-              <input name='email' type="text"  onChange={handleChange}  placeholder="Escribe tu usuario"/>
+              <input name='code' type="text"  onChange={handleChange}  placeholder="Escribe tu usuario"/>
 
               <label>Contraseña</label>
 

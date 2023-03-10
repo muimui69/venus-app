@@ -33,9 +33,9 @@ export const App =()=>{
                     <Route 
                         path = '/home' 
                         element={
-                            <ProtectedRoute>
+                           <ProtectedRoute>
                                 <Home/>
-                            </ProtectedRoute>
+                           </ProtectedRoute>
                         }
                     />
 
@@ -56,7 +56,7 @@ export const App =()=>{
                     <Route 
                         path = '/home/cardlist'
                         element={
-                            <CardList/>
+                            <CardList prop='pendiente'/>
                         }
                     />
 
