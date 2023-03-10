@@ -1,5 +1,5 @@
 import { useGlobal } from "../backend/context/GlobalContext";
-
+import { Link} from 'react-router-dom';
 
 const renderList = (tipo, solicitud,count) => {
     switch (tipo) {
@@ -26,19 +26,20 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, tipo, fecha }) => (
+                                         solicitud.map(({id, codigo,estado, tipo, fecha }) => (
+                                            estado==='pendiente' &&
                                             <tbody key={id}>
-                                                <tr>
-                                                    <td>{codigo}</td>
-                                                    <td>{tipo}</td>
-                                                    <td>{fecha}</td>
-                                                    <td>
-                                                        <a href="#" className="btn btn-green">VER</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" className="btn btn-orange">PASOS</a>
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <td>{codigo}</td>
+                                                <td>{tipo}</td>
+                                                <td>{fecha}</td>
+                                                <td>
+                                                    <Link to='/home/viewcarta' className="btn btn-green"> VER </Link>
+                                                </td>
+                                                <td>
+                                                    <a href="#" className="btn btn-orange">PASOS</a>
+                                                </td>
+                                            </tr>
                                             </tbody>
                                         ))
                                     }
@@ -75,17 +76,18 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, tipo, fecha }) => (
+                                         solicitud.map(({id, codigo,estado, tipo, fecha }) => (
+                                            estado==='aceptado' &&
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
                                                     <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
-                                                        <a href="#" className="btn btn-green">VER</a>
+                                                        <Link to='/home/redirect-acept' className="btn btn-green"> VER </Link>
                                                     </td>
                                                     <td>
-                                                        <a href="#" className="btn btn-orange">PASOS</a>
+                                                        <Link to='/home/redirect-view-control' className="btn btn-orange"> PASOS </Link>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -124,7 +126,8 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, tipo, fecha }) => (
+                                         solicitud.map(({id, codigo, estado,tipo, fecha }) => (
+                                            estado==='rechazado' &&
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>

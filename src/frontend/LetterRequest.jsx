@@ -48,7 +48,6 @@ export const LetterRequest =()=>{
             <h1 className="text2">Nueva Solicitud</h1>
 
             <form onSubmit={handleSubmit} className="formulario">
-
                 <label onChange={handleChange} htmlFor="tipo">
                     <span>TIPO</span>
                     <input name="tipo" list="tipos" />

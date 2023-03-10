@@ -1,10 +1,9 @@
 import { useGlobal } from '../backend/context/GlobalContext';
-import { useNavigate,useLocation,Link} from 'react-router-dom';
+import { useLocation,Link} from 'react-router-dom';
 
 export const Heading =()=>{
 
     const { logout,user} = useGlobal();
-    const navigate = useNavigate();
     const location = useLocation();
    
     return (

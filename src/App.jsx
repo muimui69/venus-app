@@ -14,8 +14,10 @@ import {ResetPassword} from './frontend/ResetPassword';
 import {VerifyEmail} from './frontend/VerifyEmail'; 
 import {CardList} from './frontend/CardList';
 import { Heading } from './frontend/Heading';
-import { Pdf } from './frontend/Pdf';
 import { LetterRequest } from './frontend/LetterRequest';
+import { Acept } from './frontend/Acept';
+import { CheckAcepted} from './frontend/CheckAcepted';
+import {Carta} from './frontend/Carta';
 
 export const App =()=>{
 
@@ -98,6 +100,34 @@ export const App =()=>{
                             <Navigate replace to="/404"/>
                         } 
                     />
+
+                    <Route 
+                        path = '/home/redirect-acept'
+                        element={
+                            <ProtectedRoute>
+                                <Acept/>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route 
+                        path = '/home/redirect-view-control'
+                        element={
+                            <ProtectedRoute>
+                                <CheckAcepted/>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route 
+                        path = '/home/viewcarta'
+                        element={
+                            <ProtectedRoute>
+                                <Carta/>
+                            </ProtectedRoute>
+                        }
+                    />
+
 
                     </Routes>
                 </GlobalProvider>
