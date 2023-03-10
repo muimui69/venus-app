@@ -10,7 +10,7 @@ export const LetterRequest =()=>{
         codigo: '',
         referencia: '',
         fecha:'',
-        estado:'',
+        estado:'pendiente',
         destino:'',
         uidAdmin:'',
         mensaje:''
