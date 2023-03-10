@@ -30,7 +30,10 @@ export const GlobalProvider = ({children}) =>{
     const [user,setUser] = useState(null);
     const [solicitud,setSolicitud] = useState([]);
     const [loading,setIsloading] = useState(true);
+
     const [countPendiente,setCountPendiente] = useState(0);
+    const [countAceptado,setCountAceptado] = useState(0);
+    const [countRechazado,setCountRechazado] = useState(0);
 
     const loginUser = async(email,password) => signInWithEmailAndPassword(auth,email,password);
 
@@ -68,25 +71,56 @@ export const GlobalProvider = ({children}) =>{
         });
     };
 
-    const getCantSolicitudPendiente = async() => {
+    const getCantSolicitud = async() => {
         onSnapshot(collection(db, 'solicitud'), (test) => {
           const uidCurrent = auth.currentUser.uid;
-          let c = 0;
+          let p = 0;
+          let a = 0;
+          let r = 0;
           test.forEach( doc =>{
             const {uid,estado} = doc.data();
             if(uid===uidCurrent && estado==='pendiente'){
-                c++;
+                p++;
             }
+
+            if(uid===uidCurrent && estado==='aceptado'){
+                a++;
+            }
+
+            if(uid===uidCurrent && estado==='rechazado'){
+                r++;
+            }
+
           })
-          setCountPendiente(c);
+          setCountPendiente(p);
+          setCountAceptado(a);
+          setCountRechazado(r);
         });
     };
+
+    const caseCount =(estado)=>{
+       switch (estado) {
+        case 'pendiente':
+            return countPendiente; 
+            break;
+        case 'rechazado':
+            return countRechazado;
+            break;
+        case 'aceptado':
+            return countAceptado;
+            break;
+    
+        default:
+            break;
+       }
+    }
 
     useEffect( ()=> {
         onAuthStateChanged( auth , currentUser =>{
             setUser(currentUser);
             setIsloading(false);
             getUser();
+            getCantSolicitud();
             if(auth.currentUser!==null){
                 getSolicitud();
             }
@@ -101,7 +135,7 @@ export const GlobalProvider = ({children}) =>{
                 logout,
                 loading,
                 solicitud,
-                countPendiente
+                caseCount
             }}
         >
             {children}

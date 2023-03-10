@@ -30,30 +30,33 @@ export const Login = () => {
   const handleClick =() =>{
     navigate('/verify-user-email')
   }
- 
 
   return (
-    <div className='background-inicio'>
-      <div className="login-box">
-            <h1>UAGRM</h1>
-            <form onSubmit={handleSubmit}>
+    <div className=''>
+        <div className="login-box"> 
+          
+          <h1> Ingresar al sistema de cartas digitales </h1>
 
-              <label>Usuario</label>
-              <input name='code' type="text"  onChange={handleChange}  placeholder="Escribe tu usuario"/>
+          <form onSubmit={handleSubmit}>
+             
+              <div className="div-aux">
+                <label htmlFor="usuario">Usuario</label>
+              </div>
 
-              <label>Contraseña</label>
-
-              <input name='password'  type="password" onChange={handleChange} placeholder="Escribe tu contraseña"/>
+              <input name='code' type="text"  onChange={handleChange} placeholder="example123"/>
+            
+              <div className="div-aux">
+                <label for="Contraseña">Contraseña</label>
+              </div>
+              
+              <input name='password' onChange={handleChange} type="password" placeholder="********"/>
 
               <input type="submit" value="Entrar"/>
-
-
-              <a onClick={()=>handleClick()}>Lost your password?</a>
-
-              <br/>
-
-            </form>
+          </form>
+          <div className="div-foot">
+              <a onClick={()=>handleClick()} href="#">Olvidaste tu contraseña?</a><br/>
           </div>
+      </div>
     </div>
   )
 }
