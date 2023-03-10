@@ -134,13 +134,12 @@ body {
     gap: 1rem;
 }
 
-
 .btn-superior {
     border: 2px solid #000000;
+    text-decoration: none;
     border-radius: 10px;
     padding: 15px;
     width: auto;
-    height: 50px;
     font-weight: 700;
     background: none;
     display: flex;

@@ -6,61 +6,34 @@ export const Heading =()=>{
     const { logout,user} = useGlobal();
     const navigate = useNavigate();
     const location = useLocation();
-
-    const redirectPendientes =()=>{
-        navigate('/home');
-    }
-
-    const redirectAceptado =()=>{
-        navigate('/home/listview-aceptado');
-    }
    
-    const redirectRechazado=()=>{
-        navigate('/home/listview-rechazado');
-    }
-
-    const redirectRedact =()=>{
-        navigate('/home/pdf-redact');
-    }
-
-
     return (
         <>
             {
-                user && location.pathname!=='/404' && <nav className="nav">
+                user && location.pathname!=='/404' &&   
+                    <nav className="nav">
                 
-                    <div className="nav-container">
-                        <div className="nav-title">
-                            <img src="./logouagrm.png" className="nav-logo"/>
-                            <h1> Cartas digitales </h1>
+                        <div className="nav-container">
+                            <div className="nav-title">
+                        
+                                <h1> Cartas digitales </h1>
 
-                            <button onClick={()=>redirectPendientes()} className="btn-superior">
-                                Pendientes
-                                <img src="../assets/house.svg" className="icon-btn"/>
-                            </button>
+                                <Link to='/home' className="btn-superior"> Pendientes </Link>
 
-                            <button onClick={()=>redirectAceptado()} className="btn-superior">
-                                Aprobadas
-                                <img src="../assets/house.svg" className="icon-btn"/>
-                            </button>
+                                <Link to='/home/listview-aceptado' className="btn-superior"> Aprobadas </Link>
 
-                            <button onClick={()=>redirectRechazado()} className="btn-superior">
-                                Rechazadas
-                                <img src="../assets/projects.svg" className="icon-btn"/>
-                            </button>
-                            
-                            <button onClick={()=>redirectRedact()} className="btn-superior">
-                                Redactar Carta
-                                <img src="../assets/email.svg" className="icon-btn"/>
-                            </button>
+                                <Link to='/home/listview-rechazado' className="btn-superior"> Rechazadas </Link>
 
-                            <button onClick={()=>{logout()}} className="btn-superior">
-                                Cerrar Sesion
-                            </button>
+                                <Link to='/home/pdf-redact' className="btn-superior"> Redactar Carta </Link>
+
+                                <button onClick={()=>{logout()}} className="btn-superior">
+                                    Cerrar Sesion
+                                </button>
+                            </div>
                         </div>
-                    
+                    </nav>
 
-
+                /*
                     <a href="#menu" className="nav-menu">
                         <img src="../../ramaPur/assets/menu.svg" className="nav-icon"/>
                     </a>
@@ -174,8 +147,9 @@ export const Heading =()=>{
                         </li>
                     </ul>
                 </div>
-            </nav>        
-            }        
+            </nav>  
+             */      
+            }  
         </>
    )
 }
