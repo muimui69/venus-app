@@ -8,6 +8,7 @@ export const LetterRequest =()=>{
 
     const [letter, setLetter] = useState({
         codigo: '',
+        tipo:'',
         referencia: '',
         fecha:'',
         estado:'pendiente',
@@ -50,7 +51,7 @@ export const LetterRequest =()=>{
 
                 <label onChange={handleChange} htmlFor="tipo">
                     <span>TIPO</span>
-                    <input name="referencia" list="tipos" />
+                    <input name="tipo" list="tipos" />
                     <datalist id="tipos">
                         <option   value="SOLICITUD"></option>
                         <option   value="RECLAMACION"></option>
@@ -74,9 +75,9 @@ export const LetterRequest =()=>{
                     </datalist>
                 </label>
 
-                <label htmlFor="Referencia">
+                <label htmlFor="referencia">
                     <span>REFERENCIA</span>
-                    <input onChange={handleChange} name="Referencia" type="text" id="Referencia" placeholder="Motivo de la carta" required />
+                    <input onChange={handleChange} name="referencia" type="text" id="Referencia" placeholder="Motivo de la carta" required />
                 </label>
 
 

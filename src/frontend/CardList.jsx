@@ -26,11 +26,11 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, referencia, fecha }) => (
+                                         solicitud.map(({id, codigo, tipo, fecha }) => (
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
-                                                    <td>{referencia}</td>
+                                                    <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
                                                         <a href="#" className="btn btn-green">VER</a>
@@ -75,11 +75,11 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, referencia, fecha }) => (
+                                         solicitud.map(({id, codigo, tipo, fecha }) => (
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
-                                                    <td>{referencia}</td>
+                                                    <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
                                                         <a href="#" className="btn btn-green">VER</a>
@@ -124,11 +124,11 @@ const renderList = (tipo, solicitud,count) => {
                                         </tr>
                                     </thead>
                                     {
-                                         solicitud.map(({id, codigo, referencia, fecha }) => (
+                                         solicitud.map(({id, codigo, tipo, fecha }) => (
                                             <tbody key={id}>
                                                 <tr>
                                                     <td>{codigo}</td>
-                                                    <td>{referencia}</td>
+                                                    <td>{tipo}</td>
                                                     <td>{fecha}</td>
                                                     <td>
                                                         <a href="#" className="btn btn-green">VER</a>

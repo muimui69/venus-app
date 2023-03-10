@@ -1,10 +1,11 @@
 import { useGlobal } from '../backend/context/GlobalContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation,Link} from 'react-router-dom';
 
 export const Heading =()=>{
 
     const { logout,user} = useGlobal();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const redirectPendientes =()=>{
         navigate('/home');
@@ -26,7 +27,7 @@ export const Heading =()=>{
     return (
         <>
             {
-                user && <nav className="nav">
+                user && location.pathname!=='/404' && <nav className="nav">
                 
                     <div className="nav-container">
                         <div className="nav-title">
@@ -35,22 +36,22 @@ export const Heading =()=>{
 
                             <button onClick={()=>redirectPendientes()} className="btn-superior">
                                 Pendientes
-                                <img src="../../ramaPur/assets/house.svg" className="icon-btn"/>
+                                <img src="../assets/house.svg" className="icon-btn"/>
                             </button>
 
                             <button onClick={()=>redirectAceptado()} className="btn-superior">
                                 Aprobadas
-                                <img src="../../ramaPur/assets/house.svg" className="icon-btn"/>
+                                <img src="../assets/house.svg" className="icon-btn"/>
                             </button>
 
                             <button onClick={()=>redirectRechazado()} className="btn-superior">
                                 Rechazadas
-                                <img src="../../ramaPur/assets/projects.svg" className="icon-btn"/>
+                                <img src="../assets/projects.svg" className="icon-btn"/>
                             </button>
                             
                             <button onClick={()=>redirectRedact()} className="btn-superior">
                                 Redactar Carta
-                                <img src="../../ramaPur/assets/email.svg" className="icon-btn"/>
+                                <img src="../assets/email.svg" className="icon-btn"/>
                             </button>
 
                             <button onClick={()=>{logout()}} className="btn-superior">

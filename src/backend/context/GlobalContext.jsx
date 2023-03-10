@@ -30,7 +30,6 @@ export const GlobalProvider = ({children}) =>{
     const [user,setUser] = useState(null);
     const [solicitud,setSolicitud] = useState([]);
     const [loading,setIsloading] = useState(true);
-    const [userCode,setUsercode] = useState(null);
 
     const [countPendiente,setCountPendiente] = useState(0);
     const [countAceptado,setCountAceptado] = useState(0);
@@ -44,7 +43,6 @@ export const GlobalProvider = ({children}) =>{
         userData.map(({email,password,usercode}) =>{
             if(code===usercode && password===passwordUser){
              loginUser(email,password); 
-             setUsercode(code);
             }
         })
     } 
@@ -102,7 +100,7 @@ export const GlobalProvider = ({children}) =>{
 
     const userAddRedactLetter = async(values) =>{
         const uid = auth.currentUser.uid;
-        await addDoc( collection( db ,'solicitud') , ({...values,uid,userCode}) );
+        await addDoc( collection( db ,'solicitud') , ({...values,uid}) );
     }
 
     const caseCount =(estado)=>{
@@ -127,9 +125,9 @@ export const GlobalProvider = ({children}) =>{
             setUser(currentUser);
             setIsloading(false);
             getUser();
-            getCantSolicitud();
             if(auth.currentUser!==null){
                 getSolicitud();
+                getCantSolicitud();
             }
         });
     },[auth]);

@@ -1,11 +1,12 @@
 import {FirebaseAppProvider} from 'reactfire';
-import { Route,Routes } from 'react-router-dom';
+import { Route,Routes,Navigate } from 'react-router-dom';
 
 /*************************** BACK - END *********************/
 import {FirebaseConfig} from './backend/FirebaseConfig';
 import { GlobalProvider } from './backend/context/GlobalContext';
 import {ProtectedRouteApp} from '../src/backend/ProtectedRouteApp';
 import {ProtectedRoute} from '../src/backend/ProtectedRoute';
+import { Page404 } from './backend/Page404';
 
 /*************************** FRONT - END *********************/
 import { Login } from './frontend/Login';
@@ -17,6 +18,7 @@ import { Pdf } from './frontend/Pdf';
 import { LetterRequest } from './frontend/LetterRequest';
 
 export const App =()=>{
+
     return (
         <>
             <FirebaseAppProvider firebaseConfig={FirebaseConfig}>
@@ -82,6 +84,19 @@ export const App =()=>{
                                 <LetterRequest/>
                             </ProtectedRoute>
                         }
+                    />
+
+                    <Route 
+                        path="/404" 
+                        element={
+                            <Page404/>
+                        }
+                    />
+
+                    <Route path="*" 
+                        element={
+                            <Navigate replace to="/404"/>
+                        } 
                     />
 
                     </Routes>

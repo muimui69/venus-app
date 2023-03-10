@@ -1,5 +1,5 @@
 :root {
-    --moradito: #3cc93f;  
+    --moradito: #3cc93f;
 }
 
 
@@ -33,11 +33,12 @@ body {
 .div-aux {
     width: 100%;
 }
+
 .login-box form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 
 }
 
@@ -127,11 +128,12 @@ body {
 
 .nav-title {
     color: white;
-    grid-area: title; 
+    grid-area: title;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
+
 
 .btn-superior {
     border: 2px solid #000000;
@@ -175,7 +177,7 @@ body {
 h2 {
     position: absolute;
     left: 3%;
-    top:14%;
+    top: 14%;
     color: var(--moradito);
 }
 
@@ -237,7 +239,8 @@ h2 {
 .dropdown-list:has(:checked) {
     --rows: 1fr;
     --rotate: rotate(180deg);
-    --bg: #28303B;;
+    --bg: #28303B;
+    ;
 }
 
 .dropdown-check {
@@ -272,7 +275,7 @@ h2 {
 
 .dropdown-li {
     width: 85%;
-    background-color:#c3c3c3;
+    background-color: #c3c3c3;
     list-style: none;
     border-radius: 10px;
     margin-top: 5px;
@@ -347,9 +350,11 @@ tr {
 tbody tr {
     cursor: pointer;
 }
+
 tbody tr:hover {
     background: rgba(179, 152, 170, 0.4);
 }
+
 th {
     font-weight: 700;
     text-transform: uppercase;
@@ -357,8 +362,9 @@ th {
 
 td {
     font-weight: 700;
-    text-align: center  ;
+    text-align: center;
 }
+
 .btn {
     border-radius: 3px;
     padding: 5px 5px;
@@ -396,6 +402,7 @@ td {
     font-size: 30px;
     font-weight: 800;
 }
+
 .formulario {
     color: #000;
     display: flex;
@@ -429,5 +436,84 @@ td {
 
 .boton-verde {
     background-color: #49dd75;
+}
 
+
+.container-404 {
+    background: #ECEFF1;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#message {
+    background: white;
+    max-width: 360px;
+    margin: 100px auto 16px;
+    padding: 32px 24px 16px;
+    border-radius: 3px;
+}
+
+#message h3 {
+    color: #888;
+    font-weight: normal;
+    font-size: 16px;
+    margin: 16px 0 12px;
+}
+
+#message h2 {
+    color: #ffa100;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 0 8px;
+}
+
+#message h1 {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 16px;
+}
+
+#message p {
+    line-height: 140%;
+    margin: 16px 0 24px;
+    font-size: 14px;
+}
+
+#message a {
+    display: block;
+    text-align: center;
+    background: #039be5;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+#message,
+#message a {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#load {
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+    body,
+    #message {
+        margin-top: 0;
+        background: white;
+        box-shadow: none;
+    }
+
+    body {
+        border-top: 16px solid #ffa100;
+    }
 }
