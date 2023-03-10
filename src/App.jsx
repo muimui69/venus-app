@@ -9,33 +9,27 @@ import {ProtectedRoute} from '../src/backend/ProtectedRoute';
 
 /*************************** FRONT - END *********************/
 import { Login } from './frontend/Login';
-import { Home } from './frontend/Home';
 import {ResetPassword} from './frontend/ResetPassword';
 import {VerifyEmail} from './frontend/VerifyEmail'; 
 import {CardList} from './frontend/CardList';
+import { Heading } from './frontend/Heading';
+import { Pdf } from './frontend/Pdf';
 
 export const App =()=>{
     return (
         <>
             <FirebaseAppProvider firebaseConfig={FirebaseConfig}>
                 <GlobalProvider>
-                    <Routes>
+                    <Heading/>
                     
+                    <Routes>
+
                     <Route 
                         path = '/' 
                         element={
                             <ProtectedRouteApp>
                                 <Login/>
                             </ProtectedRouteApp>
-                        }
-                    />
-
-                    <Route 
-                        path = '/home' 
-                        element={
-                           <ProtectedRoute>
-                                <Home/>
-                           </ProtectedRoute>
                         }
                     />
 
@@ -54,9 +48,38 @@ export const App =()=>{
                     />
 
                     <Route 
-                        path = '/home/cardlist'
+                        path = '/home'
                         element={
-                            <CardList prop='pendiente'/>
+                            <ProtectedRoute>
+                                 <CardList prop='pendiente'/>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route 
+                        path = '/home/listview-aceptado'
+                        element={
+                            <ProtectedRoute>
+                                 <CardList prop='aceptado'/>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route 
+                        path = '/home/listview-rechazado'
+                        element={
+                            <ProtectedRoute>
+                              <CardList prop='rechazado'/>
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route 
+                        path = '/home/pdf-redact'
+                        element={
+                            <ProtectedRoute>
+                              <Pdf/>
+                            </ProtectedRoute>
                         }
                     />
 
