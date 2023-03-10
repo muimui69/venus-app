@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-ser
+}
+
+
+*::-webkit-scrollbar {
+    width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #3cc93f;
+    border-radius: 20px;
+    box-shadow: inherit;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 70%;
+    height: 70vh;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.text {
+    padding: 20px;
+    color: #000;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+table {
+    color: #000000;
+    font-size: 14px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+
+thead {
+    background: #8D8D8Da2;
+}
+
+tr {
+    height: 50px;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+tbody tr:hover {
+    background: rgba(179, 152, 170, 0.4);
+}
+th {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    font-weight: 700;
+    text-align: center  ;
+}
+.btn {
+    border-radius: 3px;
+    padding: 5px 5px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba (255, 255, 255, 0.3);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, .3);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.btn-green {
+    background-color: #3cc93f;
+}
+
+.btn-orange {
+    background-color: #ee8b19;
+}
